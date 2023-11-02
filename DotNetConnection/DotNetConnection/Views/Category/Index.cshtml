@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Category>
+<a asp-action="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">CreatedAt</th>
+            <th scope="col">UpdatedAt</th>
+               <th scope="col">Action</th
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Category c in Model)
+        {
+            <tr>
+                <td>@c.CategoryId</td>
+                <td>@c.Name</td>
+                <td>@c.CreatedAt</td>
+                <td>@c.LastUpdatedAt</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@c.CategoryId">Edit</a>
+                </td>
+            </tr>
+        }
+
+       
+    </tbody>
+</table>

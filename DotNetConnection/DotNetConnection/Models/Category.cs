@@ -1,8 +1,8 @@
 ﻿namespace DotNetConnection.Models
 {
-    public class Category
+    public class Category:DateEntity
     {
-        public int Id { get; set; }     
+        public int CategoryId { get; set; }     
 
         public string Name { get; set; }
 

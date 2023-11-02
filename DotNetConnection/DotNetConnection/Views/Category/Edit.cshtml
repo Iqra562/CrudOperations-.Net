@@ -1,0 +1,8 @@
+﻿@model Category
+<form method="post">
+    <input type="hidden" asp-for="CategoryId" />
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name"></span>
+    <button type="submit">Save changes</button>
+</form>
