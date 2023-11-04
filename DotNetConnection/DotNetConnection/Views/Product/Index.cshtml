@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Product>
+<a asp-action="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product p in Model)
+        {
+            <tr>
+                <td>@p.ProductId</td>
+                <td>@p.Name</td>
+                <td>@p.CreatedAt</td>
+                <td>@p.LastUpdatedAt</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.ProductId">Edit</a>
+                </td>
+            </tr>
+        }
+
+       
+    </tbody>
+</table>
