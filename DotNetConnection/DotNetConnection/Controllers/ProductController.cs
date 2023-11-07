@@ -9,9 +9,12 @@ namespace DotNetConnection.Controllers
     public class ProductController : Controller
     {
         private ApplicationDbContext _db;
-        public ProductController(ApplicationDbContext db)
+        private readonly IWebHostEnvironment _host;
+
+        public ProductController(ApplicationDbContext db, IWebHostEnvironment host)
         {
             _db = db;
+            _host = host;
         }
         public IActionResult Index()
         {
@@ -32,13 +35,13 @@ namespace DotNetConnection.Controllers
                 using (FileStream fs = new FileStream(path,FileMode.Create))
                 {
 
-                    request.Image.CopyTo(fs);36
+                    request.Image.CopyTo(fs);
                 }
                 Product p = new Product();
                 p.Name = request.Name;
                 p.Price = request.Price;
                 p.CategoryId = request.CategoryId;
-                p.Image = "images";
+                p.Image = "images/"+request.Image.FileName;
                 _db.Products.Add(p);
                 _db.SaveChanges();
                 return RedirectToAction("Index");

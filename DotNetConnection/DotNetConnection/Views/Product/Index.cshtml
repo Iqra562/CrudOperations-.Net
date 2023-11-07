@@ -22,6 +22,9 @@
                 <td>@p.CreatedAt</td>
                 <td>@p.LastUpdatedAt</td>
                 <td>
+                    <img src="~/@p.Image" width="100"/>
+                </td>
+                <td>
                     <a asp-action="Edit" asp-route-id="@p.ProductId">Edit</a>
                 </td>
             </tr>
