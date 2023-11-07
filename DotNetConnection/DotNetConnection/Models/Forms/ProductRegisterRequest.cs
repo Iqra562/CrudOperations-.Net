@@ -8,8 +8,8 @@ namespace DotNetConnection.Models.Forms
         public string Name { get; set; }
         [Required]
         public string Price { get; set; }
-       // [Required]
-       // public string Image { get; set; }
+        [Required]
+        public IFormFile Image { get; set; }
         [Required]
         public int CategoryId { get; set; }
     }

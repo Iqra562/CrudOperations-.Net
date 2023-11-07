@@ -28,15 +28,20 @@ namespace DotNetConnection.Controllers
             ViewBag.Categories = _db.Categories;
             if (ModelState.IsValid)
             {
+                string path = Path.Combine(_host.WebRootPath, "Images", request.Image.FileName);
+                using (FileStream fs = new FileStream(path,FileMode.Create))
+                {
+
+                    request.Image.CopyTo(fs);36
+                }
                 Product p = new Product();
                 p.Name = request.Name;
                 p.Price = request.Price;
                 p.CategoryId = request.CategoryId;
-                p.Image = "";
+                p.Image = "images";
                 _db.Products.Add(p);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
-
 
 
             }
