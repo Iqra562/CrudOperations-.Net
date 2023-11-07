@@ -7,6 +7,8 @@
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Category</th>
+             <th scope="col">CreatedAt</th>
+            <th scope="col">UpdatedAt</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +17,8 @@
             <tr>
                 <td>@p.ProductId</td>
                 <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Category.CategoryId</td>
                 <td>@p.CreatedAt</td>
                 <td>@p.LastUpdatedAt</td>
                 <td>
